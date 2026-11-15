@@ -110,7 +110,7 @@ section.feature.flip .glass-card { order: 2; }
 .line.dim { border-color: var(--line); color: var(--text-3); }
 .tile { min-width: 34px; height: 36px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 10px; background: #fff;
   border: 1.5px solid #cfd6de; box-shadow: 0 3px 0 #cfd6de; font-family: "Times New Roman", Times, serif; font-size: 19px; }
-.check { margin-left: auto; color: var(--mint-deep); font-weight: 800; font-family: "Nunito", sans-serif; font-size: 15px; }
+.check { white-space: nowrap; margin-left: auto; color: var(--mint-deep); font-weight: 800; font-family: "Nunito", sans-serif; font-size: 15px; }
 .keys { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 18px; }
 .keys .tile { width: auto; }
 
@@ -175,8 +175,19 @@ th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--li
 th { color: var(--text); }
 
 /* Появление при прокрутке */
-.reveal { opacity: 0; transform: translateY(28px) scale(0.985); transition: opacity 800ms var(--ease) var(--d, 0ms), transform 800ms var(--ease) var(--d, 0ms); }
-.reveal.in { opacity: 1; transform: none; }
+/* Появление как у Airy: карточка выезжает слева, текст справа, пункты внутри поднимаются по одному. */
+:root { --spring: cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 900ms var(--spring) var(--d, 0ms), transform 900ms var(--spring) var(--d, 0ms); }
+.feature > .glass-card.reveal { transform: translateX(-60px); }
+.feature > div:not(.glass-card).reveal { transform: translateX(60px); }
+.feature.flip > .glass-card.reveal { transform: translateX(60px); }
+.feature.flip > div:not(.glass-card).reveal { transform: translateX(-60px); }
+.reveal.in { opacity: 1; transform: none !important; }
+/* Пункты внутри появившегося блока — по очереди снизу (номер — --i из site.js). */
+.stagger > * { opacity: 0; transform: translateY(30px);
+  transition: opacity 700ms var(--spring) calc(250ms + var(--i, 0) * 80ms), transform 700ms var(--spring) calc(250ms + var(--i, 0) * 80ms),
+    translate 250ms var(--ease), box-shadow 300ms var(--ease) !important; }
+.in .stagger > *, .stagger.in > * { opacity: 1; transform: none; }
 
 /* ---------- Живость ---------- */
 /* Слова в заголовке */
@@ -206,11 +217,11 @@ th { color: var(--text); }
   box-shadow: 0 3px 0 #cfd6de; font-family: "Times New Roman", Times, serif; font-size: 19px; }
 
 /* Учителя покачиваются, при наведении подпрыгивают */
-.team figure { transition: transform 300ms var(--ease), box-shadow 300ms var(--ease); }
+.team figure { transition: translate 300ms var(--ease), box-shadow 300ms var(--ease); }
 .team figure img { animation: bob 3.6s ease-in-out infinite; }
 .team figure:nth-child(2n) img { animation-delay: -1.2s; }
 .team figure:nth-child(3n) img { animation-delay: -2.1s; }
-.team figure:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(30,50,80,0.12); }
+.team figure:hover { translate: 0 -6px; box-shadow: 0 14px 30px rgba(30,50,80,0.12); }
 .team figure:hover img { animation: hop 520ms cubic-bezier(0.34, 1.56, 0.64, 1); }
 @keyframes bob { 50% { transform: translateY(-4px) rotate(-1.5deg); } }
 @keyframes hop { 40% { transform: translateY(-14px) scale(1.06); } }
@@ -223,14 +234,15 @@ th { color: var(--text); }
 
 /* Карточки и кнопки отзываются на курсор */
 @media (hover: hover) and (pointer: fine) {
-  .glass-card { transition: opacity 800ms var(--ease) var(--d, 0ms), transform 500ms var(--ease), box-shadow 500ms var(--ease); }
-  .glass-card:hover { transform: translateY(-4px); box-shadow: 0 1px 2px rgba(26,29,33,0.04), 0 26px 60px rgba(30,50,80,0.14); }
+  .glass-card.in { transition: opacity 900ms var(--spring), transform 900ms var(--spring), translate 500ms var(--ease), box-shadow 500ms var(--ease); }
+  .glass-card.in:hover { translate: 0 -4px; box-shadow: 0 1px 2px rgba(26,29,33,0.04), 0 26px 60px rgba(30,50,80,0.14); }
   .store:hover, .pill:hover { transform: translateY(-2px); }
-  .tag, .chip, .mini { transition: transform 250ms var(--ease); }
-  .tag:hover, .chip:hover, .mini:hover { transform: translateY(-3px); }
+  .tag:hover, .chip:hover, .mini:hover { translate: 0 -3px; }
 }
 
 @media (max-width: 860px) {
+  .feature > .glass-card.reveal, .feature.flip > div:not(.glass-card).reveal { transform: translateX(-28px); }
+  .feature > div:not(.glass-card).reveal, .feature.flip > .glass-card.reveal { transform: translateX(28px); }
   .hero, section.feature { grid-template-columns: 1fr; gap: 40px; }
   .hero { padding: 40px 0 60px; min-height: 0; text-align: left; }
   section.feature.flip .glass-card { order: 0; }
@@ -239,10 +251,13 @@ th { color: var(--text); }
 }
 @media (max-width: 420px) {
   .wrap { padding: 0 16px; }
+  .line { gap: 4px; }
+  .line .tile, .key { min-width: 26px; height: 32px; padding: 0 5px; font-size: 16px; border-radius: 8px; }
+  .check { font-size: 13px; }
   .glass-card { padding: 20px; }
   .privacy-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   .orbs span, .phone, .marquee .track, .team figure img, .chests img { animation: none !important; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .feature > .reveal, .stagger > * { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

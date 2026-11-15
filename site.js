@@ -13,6 +13,8 @@
     }
   }, { threshold: 0.15 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  // Номер пункта для задержки появления по очереди.
+  document.querySelectorAll('.stagger').forEach((g) => [...g.children].forEach((c, i) => c.style.setProperty('--i', i)));
 
   // Слова в заголовке сменяют друг друга.
   const rotator = document.querySelector('.rotator');
