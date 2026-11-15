@@ -108,7 +108,7 @@ section.feature.flip .glass-card { order: 2; }
 .kim .num { border: 2px solid var(--text); width: 34px; height: 34px; display: grid; place-items: center; flex: none; font-weight: 700; }
 .line { display: flex; align-items: center; gap: 6px; padding: 12px 0; border-bottom: 2px solid var(--text); margin-top: 10px; }
 .line.dim { border-color: var(--line); color: var(--text-3); }
-.tile { min-width: 34px; height: 36px; padding: 0 8px; display: grid; place-items: center; border-radius: 10px; background: #fff;
+.tile { min-width: 34px; height: 36px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; border-radius: 10px; background: #fff;
   border: 1.5px solid #cfd6de; box-shadow: 0 3px 0 #cfd6de; font-family: "Times New Roman", Times, serif; font-size: 19px; }
 .check { margin-left: auto; color: var(--mint-deep); font-weight: 800; font-family: "Nunito", sans-serif; font-size: 15px; }
 .keys { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: 18px; }
@@ -123,7 +123,8 @@ section.feature.flip .glass-card { order: 2; }
 .rewards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .stat { border-radius: 18px; overflow: hidden; border: 2px solid; text-align: center; background: #fff; }
 .stat b { display: block; color: #fff; font-size: 12px; padding: 4px 0; }
-.stat span { display: block; font-size: 26px; font-weight: 800; padding: 10px 0; }
+.stat > span { display: block; font-size: 26px; font-weight: 800; padding: 10px 0; }
+.stat .count { display: inline; font-variant-numeric: tabular-nums; }
 .chests { display: flex; justify-content: space-around; align-items: flex-end; margin-top: 18px; }
 .chests img { height: 74px; width: auto; filter: drop-shadow(0 8px 14px rgba(0,0,0,.15)); }
 
@@ -174,8 +175,60 @@ th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--li
 th { color: var(--text); }
 
 /* Появление при прокрутке */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+.reveal { opacity: 0; transform: translateY(28px) scale(0.985); transition: opacity 800ms var(--ease) var(--d, 0ms), transform 800ms var(--ease) var(--d, 0ms); }
 .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Живость ---------- */
+/* Слова в заголовке */
+.rotator em { display: inline-block; white-space: nowrap; transition: opacity 260ms var(--ease), transform 260ms var(--ease), filter 260ms; }
+.rotator em.out { opacity: 0; transform: translateY(-0.35em); filter: blur(4px); }
+.rotator em.in-word { animation: wordIn 420ms var(--ease); }
+@keyframes wordIn { from { opacity: 0; transform: translateY(0.35em); filter: blur(4px); } }
+
+/* Бегущая лента предметов */
+.marquee { overflow: hidden; padding: 18px 0; border-block: 1px solid rgba(255,255,255,0.8); background: rgba(255,255,255,0.35);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee .track { display: flex; gap: 14px; width: max-content; animation: marquee 38s linear infinite; }
+.marquee span { padding: 10px 20px; border-radius: 999px; background: var(--glass-strong); border: 1px solid var(--edge);
+  font-weight: 800; color: var(--text-2); white-space: nowrap; box-shadow: 0 4px 14px rgba(30,50,80,0.06); }
+.marquee span:nth-child(3n+1) { color: var(--mint-deep); }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Наклон телефона */
+.tilt { justify-self: center; }
+.tilt .phone { transition: transform 500ms var(--ease); will-change: transform; }
+
+/* Плитки решения собираются сами */
+.solve.anim .tile, .solve.anim .check { opacity: 0; transform: translateY(-14px) scale(0.6); }
+.solve.anim .tile.on, .solve.anim .check.on { opacity: 1; transform: none;
+  transition: opacity 260ms var(--ease), transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+.key { min-width: 34px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: #fff; border: 1.5px solid #cfd6de;
+  box-shadow: 0 3px 0 #cfd6de; font-family: "Times New Roman", Times, serif; font-size: 19px; }
+
+/* Учителя покачиваются, при наведении подпрыгивают */
+.team figure { transition: transform 300ms var(--ease), box-shadow 300ms var(--ease); }
+.team figure img { animation: bob 3.6s ease-in-out infinite; }
+.team figure:nth-child(2n) img { animation-delay: -1.2s; }
+.team figure:nth-child(3n) img { animation-delay: -2.1s; }
+.team figure:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(30,50,80,0.12); }
+.team figure:hover img { animation: hop 520ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes bob { 50% { transform: translateY(-4px) rotate(-1.5deg); } }
+@keyframes hop { 40% { transform: translateY(-14px) scale(1.06); } }
+
+/* Сундуки подпрыгивают по очереди */
+.chests img { animation: chest 2.8s ease-in-out infinite; transform-origin: bottom center; }
+.chests img:nth-child(2) { animation-delay: 0.45s; }
+.chests img:nth-child(3) { animation-delay: 0.9s; }
+@keyframes chest { 0%, 70%, 100% { transform: none; } 78% { transform: translateY(-10px) rotate(-4deg); } 86% { transform: translateY(0) rotate(3deg); } 92% { transform: scale(1.04, 0.96); } }
+
+/* Карточки и кнопки отзываются на курсор */
+@media (hover: hover) and (pointer: fine) {
+  .glass-card { transition: opacity 800ms var(--ease) var(--d, 0ms), transform 500ms var(--ease), box-shadow 500ms var(--ease); }
+  .glass-card:hover { transform: translateY(-4px); box-shadow: 0 1px 2px rgba(26,29,33,0.04), 0 26px 60px rgba(30,50,80,0.14); }
+  .store:hover, .pill:hover { transform: translateY(-2px); }
+  .tag, .chip, .mini { transition: transform 250ms var(--ease); }
+  .tag:hover, .chip:hover, .mini:hover { transform: translateY(-3px); }
+}
 
 @media (max-width: 860px) {
   .hero, section.feature { grid-template-columns: 1fr; gap: 40px; }
@@ -190,6 +243,6 @@ th { color: var(--text); }
   .privacy-grid { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .orbs span, .phone { animation: none; }
+  .orbs span, .phone, .marquee .track, .team figure img, .chests img { animation: none !important; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }

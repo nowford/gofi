@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GoFi — подготовка к ОГЭ без скуки</title>
-  <meta name="description" content="GoFi — приложение для iPhone: задания открытого банка ФИПИ по всем предметам ОГЭ, мультяшные учителя, серия дней и разборы решений. Бесплатно, без регистрации.">
+  <meta name="description" content="GoFi — приложение для iPhone: задания открытого банка ФИПИ по всем предметам ОГЭ, учителя-персонажи, серия дней и разборы решений.">
   <meta property="og:title" content="GoFi — подготовка к ОГЭ без скуки">
   <meta property="og:description" content="Задания ФИПИ по всем 10 предметам ОГЭ, учителя-персонажи и разборы решений. Для iPhone.">
   <meta property="og:image" content="img/screen-task.jpg">
@@ -27,126 +27,136 @@
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="reveal">
-        <p class="eyebrow">Подготовка к ОГЭ на iPhone</p>
-        <h1>ОГЭ — спокойно<br>и <em>без скуки.</em></h1>
-        <p class="lead">GoFi превращает подготовку в короткие уроки: задания открытого банка ФИПИ, свой учитель-персонаж у каждого предмета и разбор каждого решения.</p>
-        <div class="actions">
-          <a class="store big" id="soon" href="#soon"><img src="icon.png" alt=""><span><small>Скоро в</small><b>App Store</b></span></a>
-          <a class="pill" href="#how">Подробнее</a>
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <div>
+          <p class="eyebrow reveal">Подготовка к ОГЭ на iPhone</p>
+          <h1 class="reveal" style="--d:80ms">ОГЭ — спокойно<br>и <span class="rotator" aria-live="polite"><em>без скуки.</em></span></h1>
+          <p class="lead reveal" style="--d:160ms">GoFi превращает подготовку в короткие уроки: задания открытого банка ФИПИ, свой учитель-персонаж у каждого предмета и разбор каждого решения.</p>
+          <div class="actions reveal" style="--d:240ms">
+            <a class="store big" id="soon" href="#soon"><img src="icon.png" alt=""><span><small>Скоро в</small><b>App Store</b></span></a>
+            <a class="pill" href="#how">Подробнее</a>
+          </div>
+          <div class="chips reveal" style="--d:320ms">
+            <span class="chip"><i></i>Задания ФИПИ</span>
+            <span class="chip"><i></i>10 предметов ОГЭ</span>
+            <span class="chip"><i></i>Разборы решений</span>
+          </div>
         </div>
-        <div class="chips">
-          <span class="chip"><i></i>Задания ФИПИ</span>
-          <span class="chip"><i></i>10 предметов ОГЭ</span>
-          <span class="chip"><i></i>Без регистрации</span>
+        <div class="tilt reveal" style="--d:200ms"><div class="phone"><img src="img/screen-task.jpg" alt="Экран задания GoFi: уравнение и строки решения из плиток"></div></div>
+      </section>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Математика</span><span>Русский язык</span><span>Физика</span><span>Химия</span><span>Биология</span><span>Информатика</span><span>Английский</span><span>История</span><span>Обществознание</span><span>География</span>
+        <span>Математика</span><span>Русский язык</span><span>Физика</span><span>Химия</span><span>Биология</span><span>Информатика</span><span>Английский</span><span>История</span><span>Обществознание</span><span>География</span>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <section class="feature" id="how">
+        <div class="glass-card reveal">
+          <p class="card-label">Как на экзамене</p>
+          <p class="card-title">Задание 9. Уравнение</p>
+          <div class="inner solve" id="solve">
+            <div class="kim"><span class="num">9</span><span>Решите уравнение 2(<i>x</i> − 7) = <i>x</i> + 7.</span></div>
+            <div class="line"><span class="tile">2<i>x</i></span><span class="tile">−</span><span class="tile">14</span><span class="tile">=</span><span class="tile"><i>x</i></span><span class="tile">+</span><span class="tile">7</span><span class="check">✓ верно</span></div>
+            <div class="line"><span class="tile"><i>x</i></span><span class="tile">=</span><span class="tile">21</span><span class="check">✓ верно</span></div>
+            <div class="keys"><span class="key">1</span><span class="key">2</span><span class="key"><i>x</i></span><span class="key">=</span><span class="key">(</span><span class="key">)</span></div>
+          </div>
         </div>
-      </div>
-      <div class="phone reveal"><img src="img/screen-task.jpg" alt="Экран задания GoFi: уравнение и строки решения из плиток"></div>
-    </section>
-
-    <section class="feature" id="how">
-      <div class="glass-card reveal">
-        <p class="card-label">Как на экзамене</p>
-        <p class="card-title">Задание 9. Уравнение</p>
-        <div class="inner">
-          <div class="kim"><span class="num">9</span><span>Решите уравнение 2(<i>x</i> − 7) = <i>x</i> + 7.</span></div>
-          <div class="line"><span class="tile">2</span><span class="tile"><i>x</i></span><span class="tile">−</span><span class="tile">14</span><span class="tile">=</span><span class="tile"><i>x</i></span><span class="tile">+</span><span class="tile">7</span><span class="check">✓ верно</span></div>
-          <div class="line"><span class="tile"><i>x</i></span><span class="tile">=</span><span class="tile">21</span><span class="check">✓ верно</span></div>
-          <div class="keys"><span class="tile">1</span><span class="tile">2</span><span class="tile"><i>x</i></span><span class="tile">=</span><span class="tile">(</span><span class="tile">)</span></div>
+        <div class="reveal" style="--d:120ms">
+          <h2>Решение собирается из плиток</h2>
+          <p>Около 12 тысяч заданий открытого банка ФИПИ выглядят как в настоящем КИМ: номер в рамке, формулы, таблицы. Ответ не печатается, а собирается из плиток. Уравнения решаются по строкам, и каждая строка проверяется сразу.</p>
+          <div class="tags"><span class="tag">Задания ФИПИ</span><span class="tag ghost">Строки решения</span><span class="tag ghost">Разбор</span></div>
         </div>
-      </div>
-      <div class="reveal">
-        <h2>Решение собирается из плиток</h2>
-        <p>Около 12 тысяч заданий открытого банка ФИПИ выглядят как в настоящем КИМ: номер в рамке, формулы, таблицы. Ответ не печатается, а собирается из плиток. Уравнения решаются по строкам, и каждая строка проверяется сразу.</p>
-        <div class="tags"><span class="tag">Задания ФИПИ</span><span class="tag ghost">Строки решения</span><span class="tag ghost">Разбор</span></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="feature flip">
-      <div class="glass-card reveal">
-        <p class="card-label">Команда GoFi</p>
-        <p class="card-title">Свой учитель у каждого предмета</p>
-        <div class="team">
-          <figure><img src="img/iks.png" alt=""><figcaption>Профессор Икс<small>математика</small></figcaption></figure>
-          <figure><img src="img/zapyataya.png" alt=""><figcaption>Миша<small>русский</small></figcaption></figure>
-          <figure><img src="img/volt.png" alt=""><figcaption>Доктор Вольт<small>физика</small></figcaption></figure>
-          <figure><img src="img/kolba.png" alt=""><figcaption>Мадам Колба<small>химия</small></figcaption></figure>
-          <figure><img src="img/kletka.png" alt=""><figcaption>Дядя Клетка<small>биология</small></figcaption></figure>
-          <figure><img src="img/bait.png" alt=""><figcaption>Байт<small>информатика</small></figcaption></figure>
-          <figure><img src="img/tea.png" alt=""><figcaption>Тея<small>английский</small></figcaption></figure>
-          <figure><img src="img/kompas.png" alt=""><figcaption>Капитан Компас<small>география</small></figcaption></figure>
+      <section class="feature flip">
+        <div class="glass-card reveal">
+          <p class="card-label">Команда GoFi</p>
+          <p class="card-title">Свой учитель у каждого предмета</p>
+          <div class="team">
+            <figure><img src="img/iks.png" alt=""><figcaption>Профессор Икс<small>математика</small></figcaption></figure>
+            <figure><img src="img/zapyataya.png" alt=""><figcaption>Миша<small>русский</small></figcaption></figure>
+            <figure><img src="img/volt.png" alt=""><figcaption>Доктор Вольт<small>физика</small></figcaption></figure>
+            <figure><img src="img/kolba.png" alt=""><figcaption>Мадам Колба<small>химия</small></figcaption></figure>
+            <figure><img src="img/kletka.png" alt=""><figcaption>Дядя Клетка<small>биология</small></figcaption></figure>
+            <figure><img src="img/bait.png" alt=""><figcaption>Байт<small>информатика</small></figcaption></figure>
+            <figure><img src="img/tea.png" alt=""><figcaption>Тея<small>английский</small></figcaption></figure>
+            <figure><img src="img/kompas.png" alt=""><figcaption>Капитан Компас<small>география</small></figcaption></figure>
+          </div>
         </div>
-      </div>
-      <div class="reveal">
-        <h2>Учителя с характером</h2>
-        <p>Медведь Миша строго следит за запятыми, Профессор Икс считает быстрее калькулятора, Доктор Вольт роняет всё «проверить гравитацию». Учителя радуются правильным ответам, сочувствуют ошибкам и разбирают решение вместе с тобой.</p>
-        <div class="tags"><span class="tag">11 героев</span><span class="tag ghost">Озвучка</span><span class="tag ghost">Свой аватар</span></div>
-      </div>
-    </section>
-
-    <section class="feature">
-      <div class="glass-card reveal">
-        <p class="card-label">Итог урока</p>
-        <p class="card-title">«Ты что, нейросеть?»</p>
-        <div class="rewards">
-          <div class="stat" style="border-color:#f2b93b"><b style="background:#f2b93b">Аквамарины</b><span style="color:#d9a02b">+27</span></div>
-          <div class="stat" style="border-color:#2fa8e0"><b style="background:#2fa8e0">Подряд</b><span style="color:#2fa8e0">×10</span></div>
-          <div class="stat" style="border-color:#2dbe7a"><b style="background:#2dbe7a">Время</b><span style="color:#2dbe7a">5:12</span></div>
+        <div class="reveal" style="--d:120ms">
+          <h2>Учителя с характером</h2>
+          <p>Медведь Миша строго следит за запятыми, Профессор Икс считает быстрее калькулятора, Доктор Вольт роняет всё «проверить гравитацию». Учителя радуются правильным ответам, сочувствуют ошибкам и разбирают решение вместе с тобой.</p>
+          <div class="tags"><span class="tag">11 героев</span><span class="tag ghost">Озвучка</span><span class="tag ghost">Свой аватар</span></div>
         </div>
-        <div class="chests"><img src="img/chest-3.png" alt="Золотой сундук"><img src="img/chest-5.png" alt="Легендарный сундук"><img src="img/chest-4.png" alt="Аквамариновый сундук"></div>
-      </div>
-      <div class="reveal">
-        <h2>Учёба, которую хочется продолжать</h2>
-        <p>Серия дней, аквамарины за решённые задания и сундуки, которые выпадают прямо по ходу урока. В конце — честная оценка фразой: от «Всё впереди» до «Ты что, нейросеть?». Без давления и навязчивых целей.</p>
-        <div class="tags"><span class="tag">Серия дней</span><span class="tag ghost">Сундуки</span><span class="tag ghost">Прогноз оценки</span></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="feature flip">
-      <div class="glass-card screen-card reveal">
-        <div class="phone"><img src="img/screen-done.jpg" alt="Экран итога урока GoFi"></div>
-      </div>
-      <div class="reveal">
-        <h2>Короткие уроки в своём темпе</h2>
-        <p>Выбирай номер КИМ и решай столько, сколько успеваешь: по дороге в школу или перед сном. Разбор открывается после ответа, ошибочные задания возвращаются в конце урока. Аудирование по английскому — с озвученными ролями и паузами как на экзамене.</p>
-        <div class="tags"><span class="tag">Номера КИМ</span><span class="tag ghost">Аудирование</span><span class="tag ghost">Справочники</span></div>
-      </div>
-    </section>
-
-    <section class="feature">
-      <div class="glass-card reveal">
-        <p class="card-label">Конфиденциальность</p>
-        <p class="card-title">Твои данные — только твои</p>
-        <div class="privacy-grid">
-          <div class="mini"><div class="ic">📱</div><h3>Только на телефоне</h3><p>Прогресс и настройки хранятся на твоём iPhone.</p></div>
-          <div class="mini"><div class="ic">🔑</div><h3>Без регистрации</h3><p>Ни почты, ни пароля, ни номера телефона.</p></div>
-          <div class="mini"><div class="ic">🚫</div><h3>Без слежки</h3><p>Никакой аналитики, трекеров и рекламных сетей.</p></div>
-          <div class="mini"><div class="ic">🧒</div><h3>Для школьников</h3><p>Ничего не собираем о детях и не продаём данные.</p></div>
+      <section class="feature">
+        <div class="glass-card reveal">
+          <p class="card-label">Итог урока</p>
+          <p class="card-title">Урок пройден!</p>
+          <div class="rewards">
+            <div class="stat" style="border-color:#f2b93b"><b style="background:#f2b93b">Аквамарины</b><span style="color:#d9a02b">+<span class="count" data-to="27">0</span></span></div>
+            <div class="stat" style="border-color:#2fa8e0"><b style="background:#2fa8e0">Подряд</b><span style="color:#2fa8e0">×<span class="count" data-to="10">0</span></span></div>
+            <div class="stat" style="border-color:#2dbe7a"><b style="background:#2dbe7a">Решено</b><span style="color:#2dbe7a"><span class="count" data-to="10">0</span></span></div>
+          </div>
+          <div class="chests"><img src="img/chest-3.png" alt="Золотой сундук"><img src="img/chest-5.png" alt="Легендарный сундук"><img src="img/chest-4.png" alt="Аквамариновый сундук"></div>
         </div>
-      </div>
-      <div class="reveal">
-        <h2>Учись спокойно</h2>
-        <p>GoFi не просит ни имени, ни возраста, ни почты. Ник, прогресс и аватар живут только на твоём телефоне. Удалишь приложение — исчезнет и всё, что в нём было.</p>
-        <span class="badge-line"><b>✓</b> Без регистрации · Без трекеров · Только на устройстве</span>
-      </div>
-    </section>
+        <div class="reveal" style="--d:120ms">
+          <h2>Учёба, которую хочется продолжать</h2>
+          <p>Серия дней, аквамарины за решённые задания и сундуки, которые выпадают прямо по ходу урока. Короткие уроки без давления и навязчивых целей — просто приходи каждый день.</p>
+          <div class="tags"><span class="tag">Серия дней</span><span class="tag ghost">Сундуки</span><span class="tag ghost">Прогноз оценки</span></div>
+        </div>
+      </section>
 
-    <section class="faq">
-      <h2 class="reveal">Частые вопросы</h2>
-      <details class="reveal"><summary>Это бесплатно?</summary><p>Да. Все задания и возможности бесплатны, покупок за деньги в приложении нет.</p></details>
-      <details class="reveal"><summary>Откуда задания?</summary><p>Из открытого банка заданий ФИПИ — тех же, что используются при составлении ОГЭ. Мы проверили ответы и написали разборы. GoFi не связан с ФИПИ.</p></details>
-      <details class="reveal"><summary>Какие предметы есть?</summary><p>Все десять предметов ОГЭ: математика, русский язык, информатика, физика, химия, биология, английский, история, обществознание и география.</p></details>
-      <details class="reveal"><summary>Нужен ли интернет и регистрация?</summary><p>Регистрация не нужна, задания встроены в приложение. Прогресс хранится только на телефоне.</p></details>
-      <details class="reveal"><summary>На каких устройствах работает?</summary><p>На iPhone с iOS 17 и новее.</p></details>
-    </section>
+      <section class="feature flip">
+        <div class="glass-card screen-card reveal">
+          <div class="tilt"><div class="phone"><img src="img/screen-done.jpg" alt="Экран итога урока GoFi"></div></div>
+        </div>
+        <div class="reveal" style="--d:120ms">
+          <h2>Короткие уроки в своём темпе</h2>
+          <p>Выбирай номер КИМ и решай столько, сколько успеваешь: по дороге в школу или перед сном. Разбор открывается после ответа, ошибочные задания возвращаются в конце урока. Аудирование по английскому — с озвученными ролями и паузами как на экзамене.</p>
+          <div class="tags"><span class="tag">Номера КИМ</span><span class="tag ghost">Аудирование</span><span class="tag ghost">Справочники</span></div>
+        </div>
+      </section>
 
-    <section class="cta reveal">
-      <img class="icon" src="icon.png" alt="">
-      <h2>Начни готовиться<br>без скуки</h2>
-      <a class="store big" href="#soon"><img src="icon.png" alt=""><span><small>Скоро в</small><b>App Store</b></span></a>
-    </section>
+      <section class="feature">
+        <div class="glass-card reveal">
+          <p class="card-label">Безопасность</p>
+          <p class="card-title">Бережём твои данные</p>
+          <div class="privacy-grid">
+            <div class="mini"><div class="ic">🛡️</div><h3>Минимум данных</h3><p>Собираем только то, что нужно для учёбы.</p></div>
+            <div class="mini"><div class="ic">🚫</div><h3>Без слежки</h3><p>Никаких рекламных трекеров и продажи данных.</p></div>
+            <div class="mini"><div class="ic">🔒</div><h3>Защищённо</h3><p>Только защищённые соединения и проверенные сервисы.</p></div>
+            <div class="mini"><div class="ic">🧒</div><h3>Для школьников</h3><p>Без тёмных приёмов и давления на детей.</p></div>
+          </div>
+        </div>
+        <div class="reveal" style="--d:120ms">
+          <h2>Учись спокойно</h2>
+          <p>GoFi сделан для школьников, поэтому мы относимся к данным серьёзно: ничего лишнего, никакой продажи данных и рекламной слежки. Подробно — в <a href="privacy.html">политике конфиденциальности</a>.</p>
+          <span class="badge-line"><b>✓</b> Без трекеров · Без продажи данных · Для школьников</span>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2 class="reveal">Частые вопросы</h2>
+        <details class="reveal"><summary>Это бесплатно?</summary><p>Да. Все задания и возможности бесплатны, покупок за деньги в приложении нет.</p></details>
+        <details class="reveal" style="--d:60ms"><summary>Откуда задания?</summary><p>Из открытого банка заданий ФИПИ — тех же, что используются при составлении ОГЭ. Мы проверили ответы и написали разборы. GoFi не связан с ФИПИ.</p></details>
+        <details class="reveal" style="--d:120ms"><summary>Какие предметы есть?</summary><p>Все десять предметов ОГЭ: математика, русский язык, информатика, физика, химия, биология, английский, история, обществознание и география.</p></details>
+        <details class="reveal" style="--d:180ms"><summary>На каких устройствах работает?</summary><p>На iPhone с iOS 17 и новее.</p></details>
+      </section>
+
+      <section class="cta reveal">
+        <img class="icon" src="icon.png" alt="">
+        <h2>Начни готовиться<br>без скуки</h2>
+        <a class="store big" href="#soon"><img src="icon.png" alt=""><span><small>Скоро в</small><b>App Store</b></span></a>
+      </section>
+    </div>
   </main>
 
   <footer>
@@ -156,10 +166,6 @@
     </div>
   </footer>
 
-  <script>
-    // Появление разделов при прокрутке; при «Уменьшении движения» всё видно сразу (см. style.css).
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-  </script>
+  <script src="site.js" defer></script>
 </body>
 </html>
