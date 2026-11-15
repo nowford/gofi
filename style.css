@@ -1,0 +1,95 @@
+/* GoFi — сайт приложения. Тёмная тема как в приложении, мятный акцент. Без трекеров и внешних скриптов. */
+:root {
+  --bg: #0e0e10;
+  --surface: #1c1c1f;
+  --surface-2: #232327;
+  --line: rgba(208, 208, 214, 0.14);
+  --text: #ededef;
+  --text-2: #a8a8ae;
+  --mint: #2ec4a0;
+  --mint-soft: #afe5d2;
+  --ink-on-mint: #0d2d24;
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: radial-gradient(120% 60% at 50% -10%, rgba(46, 196, 160, 0.16), transparent 60%);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font-family: "M PLUS Rounded 1c", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a { color: var(--mint-soft); }
+a:hover { color: #fff; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+/* Шапка */
+header.top {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(14, 14, 16, 0.82);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; font-size: 20px; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+nav a { color: var(--text-2); text-decoration: none; margin-left: 18px; font-size: 15px; font-weight: 600; }
+nav a:hover, nav a[aria-current="page"] { color: var(--text); }
+
+/* Главная */
+.hero { text-align: center; padding: 72px 0 40px; }
+.hero img.icon { width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 18px 50px rgba(46, 196, 160, 0.25); }
+.hero h1 { font-size: clamp(34px, 7vw, 54px); line-height: 1.1; margin: 28px 0 14px; letter-spacing: -0.5px; }
+.hero p.lead { font-size: 20px; color: var(--text-2); max-width: 620px; margin: 0 auto 30px; }
+
+.button {
+  display: inline-block; background: var(--mint); color: var(--ink-on-mint);
+  font-weight: 800; text-decoration: none; padding: 15px 28px; border-radius: 18px;
+  box-shadow: 0 5px 0 #1e8f74; transition: transform 120ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 120ms;
+}
+.button:active { transform: translateY(4px); box-shadow: 0 1px 0 #1e8f74; }
+.button.muted { background: var(--surface-2); color: var(--text); box-shadow: 0 5px 0 #08080a; }
+.note { color: var(--text-2); font-size: 14px; margin-top: 14px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 40px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+.card h3 { margin: 0 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--text-2); font-size: 15px; }
+.card .emoji { font-size: 28px; display: block; margin-bottom: 10px; }
+
+/* Документы */
+main.doc { padding: 40px 0 60px; }
+main.doc h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.15; margin: 0 0 6px; }
+main.doc .updated { color: var(--text-2); font-size: 14px; margin: 0 0 30px; }
+main.doc h2 { font-size: 22px; margin: 36px 0 10px; }
+main.doc li { margin: 6px 0; }
+main.doc .box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; margin: 18px 0; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--text-2); font-weight: 700; }
+
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 700; }
+details p { color: var(--text-2); margin: 10px 0 0; }
+
+footer { border-top: 1px solid var(--line); padding: 26px 0 40px; color: var(--text-2); font-size: 14px; }
+footer a { color: var(--text-2); margin-right: 16px; }
+
+@media (max-width: 520px) {
+  nav a { margin-left: 12px; font-size: 14px; }
+  .hero { padding-top: 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}
