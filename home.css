@@ -1022,3 +1022,52 @@ footer nav {
 
 /* Rotated decorative art must not widen the mobile document. */
 main { overflow-x: clip; }
+
+/* The wrapper owns layout, the Rive canvas owns all character movement. */
+.rive-character {
+  display:block;
+  position:relative;
+  aspect-ratio:360 / 580;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:inherit;
+  cursor:pointer;
+  isolation:isolate;
+  flex-shrink:0;
+}
+.rive-character canvas,.rive-character .character-poster {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:bottom;
+  pointer-events:none;
+}
+.rive-character canvas {opacity:0;transition:opacity .25s;}
+.rive-character.live canvas {opacity:1;}
+.rive-character.live .character-poster {opacity:0;}
+.hero-friend .rive-character {width:100%;}
+.hero-friend.center {animation:none;}
+.teacher-stage>.rive-character {height:360px;width:240px;margin:auto;}
+.rive-character.lesson-teacher {position:absolute;}
+.rive-character.demo-bait {height:230px;width:210px;margin:16px 0 0;transform:none;}
+.rive-character.phone-tea {position:absolute;width:240px;left:-50px;bottom:0;rotate:0deg;}
+.lineup .rive-character {width:150px;flex:0 0 150px;margin:0 -15px;}
+.lineup .rive-character:nth-child(2n) {width:130px;flex-basis:130px;}
+.lineup .rive-character:nth-child(4) {width:180px;flex-basis:180px;z-index:2;}
+.lineup .character-poster {margin:0;width:100%;}
+@media(max-width:760px) {
+  .teacher-stage>.rive-character {height:300px;width:210px;}
+  .rive-character.demo-bait {display:block;height:190px;width:210px;margin:15px auto -24px;}
+  .rive-character.phone-tea {width:200px;left:-20px;}
+  .lineup .rive-character {width:110px;flex-basis:110px;}
+  .lineup .rive-character:nth-child(2n) {width:90px;flex-basis:90px;}
+  .lineup .rive-character:nth-child(4) {width:130px;flex-basis:130px;}
+  .lineup .rive-character:first-child,.lineup .rive-character:last-child {display:none;}
+  .lineup .character-poster:first-child,.lineup .character-poster:last-child {display:block;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .rive-character {cursor:default;}
+}

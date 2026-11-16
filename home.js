@@ -21,15 +21,13 @@
   const subjects = [...document.querySelectorAll('.subject')];
   subjects.forEach(button => button.addEventListener('click', () => {
     subjects.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
-    teacherImage.src = `img/${button.dataset.teacher}.png`;
-    teacherImage.alt = button.dataset.name;
+    if (teacherImage) {
+      teacherImage.src = `img/${button.dataset.teacher}.png?v=20261116-rive`;
+      teacherImage.alt = button.dataset.name;
+    }
     document.querySelector('#teacher-name').textContent = button.dataset.name;
     document.querySelector('#teacher-description').textContent = button.dataset.description;
-    if (!motion.matches) teacherImage.animate([
-      {transform:'translateY(10px) scale(.95)',opacity:.4},
-      {transform:'translateY(-6px) scale(1.02)',opacity:1},
-      {transform:'none',opacity:1}
-    ], {duration:400,easing:'ease-out'});
+    document.dispatchEvent(new CustomEvent('gofi:teacher', {detail:{id:button.dataset.teacher,name:button.dataset.name}}));
   }));
 
   const card = document.querySelector('.demo-card');
@@ -39,6 +37,7 @@
   answers.forEach(button => button.addEventListener('click', () => {
     if (card.classList.contains('solved')) return;
     answers.forEach(answer => answer.classList.remove('wrong'));
+    document.dispatchEvent(new CustomEvent('gofi:answer', {detail:{correct:button.dataset.answer === '25'}}));
     if (button.dataset.answer !== '25') {
       button.classList.add('wrong');
       feedback.textContent = 'Почти! Квадрат — это число, умноженное на себя: 3² = 9, а 4² = 16. Попробуй ещё.';
