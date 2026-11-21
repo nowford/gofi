@@ -1071,3 +1071,9 @@ main { overflow-x: clip; }
 @media(prefers-reduced-motion:reduce) {
   .rive-character {cursor:default;}
 }
+
+/* Loading is a gentle breathing pose, not a frozen cutout. */
+.rive-character:not(.live) .character-poster {animation:poster-breathe 2.8s ease-in-out infinite;transform-origin:50% 95%;}
+.rive-character canvas,.rive-character .character-poster {transition:opacity .18s linear;}
+@keyframes poster-breathe {0%,100%{transform:translateY(0) rotate(-.4deg)}50%{transform:translateY(-3px) rotate(.4deg)}}
+@media(prefers-reduced-motion:reduce){.rive-character:not(.live) .character-poster{animation:none}}

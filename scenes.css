@@ -1,0 +1,114 @@
+/* Flat, drawn GoFi scenes. UI colours reuse the Ink-derived tokens in home.css. */
+.animated-scene {position:relative;isolation:isolate;}
+.scene-sticker {position:absolute;z-index:4;padding:12px 18px;border:2px solid var(--line);border-radius:17px;background:var(--bg);box-shadow:0 5px 0 var(--line);color:var(--green);font-size:16px;font-weight:900;line-height:1.3;}
+.phone-scene {height:570px;display:block;}
+.device-halo {position:absolute;inset:65px 0 50px;border-radius:48% 52% 61% 39%;background:var(--soft);transform:rotate(-12deg);}
+.device {position:absolute;width:230px;}
+.front-device {z-index:2;left:43%;top:60px;transform:rotate(12deg);}
+.back-device {left:6%;top:18px;transform:rotate(-14deg);}
+.device-shell {padding:24px 9px 15px;border:3px solid var(--green);border-radius:35px;background:var(--mint);box-shadow:8px 10px 0 var(--mint-rim);position:relative;}
+.back-device .device-shell {background:var(--gold);border-color:var(--ink);box-shadow:8px 10px 0 var(--purple);}
+.speaker {position:absolute;top:9px;left:40%;width:20%;height:5px;border-radius:5px;background:var(--green);opacity:.65;}
+.device-home {height:5px;width:28%;background:var(--green);opacity:.65;border-radius:5px;margin:10px auto 0;}
+.drawn-screen {height:387px;overflow:hidden;border:2px solid var(--green);border-radius:19px;background:var(--bg);font-size:11px;line-height:1.3;text-align:left;}
+.mini-status {display:flex;justify-content:space-between;font-size:9px;font-weight:900;padding:10px 12px 7px;}
+.drawn-home {background:var(--night);color:var(--bg);border-color:var(--night);}
+.mini-brand {padding:0 12px;font-size:25px;font-weight:900;color:var(--mint);letter-spacing:-1px;}
+.mini-brand>span {float:right;font-size:10px;letter-spacing:0;padding-top:10px;}
+.mini-greeting {height:116px;position:relative;display:flex;align-items:center;padding:10px 12px;}
+.mini-greeting>b {font-size:15px;line-height:1.3;width:65%;z-index:1;}
+.mini-greeting img {position:absolute;height:116px;width:72px;right:0;bottom:0;object-fit:contain;}
+.mini-subject {padding:10px 12px;color:var(--mint);font-size:12px;font-weight:900;background:color-mix(in srgb,var(--mint) 12%,var(--night));}
+.mini-subject>span {float:right;}
+.mini-row {display:flex;gap:8px;align-items:center;margin:0 10px;padding:11px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 16%,var(--night));font-size:10px;}
+.mini-row>i {font-style:normal;color:var(--mint);font-weight:900;font-size:13px;width:24px;}
+.mini-row>span {flex:1;}
+.mini-row small {display:block;font-size:8px;color:var(--line);margin-top:4px;}
+.mini-row> b {font-size:16px;color:var(--mint);}
+.mini-row em {display:block;height:4px;border-radius:4px;background:var(--mint);width:45%;transform-origin:left;}
+.mini-tabs {display:flex;justify-content:space-around;text-align:center;color:var(--mint);font-size:18px;padding-top:8px;}
+.mini-tabs small {display:block;font-size:8px;}
+.mini-tabs>span {color:var(--muted);}
+.drawn-lesson>small {display:block;padding:12px 14px 0;color:var(--green);font-weight:900;}
+.mini-progress {height:7px;margin:5px 13px;background:var(--line);border-radius:5px;overflow:hidden;}
+.mini-progress>i {display:block;width:65%;height:100%;background:var(--mint-rim);transform-origin:left;}
+.mini-question {display:block;font-size:15px;padding:16px 13px 0;}
+.mini-formula {font-weight:900;font-size:25px;text-align:center;margin:25px 0 12px;letter-spacing:-1px;}
+.mini-solution {text-align:center;font-size:18px;line-height:1.8;color:var(--muted);}
+.mini-solution strong {color:var(--green);}
+.mini-keys {display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:14px 20px;}
+.mini-keys>span {padding:6px;text-align:center;font-weight:900;border:2px solid var(--line);border-radius:9px;box-shadow:0 3px 0 var(--line);font-size:15px;}
+.mini-keys .key-answer {background:var(--mint);border-color:var(--mint-rim);box-shadow:0 3px 0 var(--mint-rim);}
+.mini-success {font-weight:900;text-align:center;color:var(--green);font-size:14px;}
+.device-sticker {bottom:17px;left:10%;transform:rotate(-6deg);}
+.device-spark {position:absolute;width:55px;height:65px;z-index:3;}
+.spark-one {top:0;right:0;transform:rotate(12deg);}
+.spark-two {bottom:15px;right:4%;transform:rotate(-12deg);}
+.listening-art {height:470px;}
+.audio-disc {position:absolute;inset:45px 35px;border-radius:50%;background:var(--soft);}
+.headphones {position:absolute;width:90%;height:94%;left:0;top:0;transform:rotate(-12deg);}
+.audio-note {position:absolute;left:1%;top:47%;width:205px;padding:18px 20px;background:var(--bg);border:3px solid var(--line);border-radius:22px;box-shadow:0 7px 0 var(--line);transform:rotate(-8deg);z-index:2;}
+.audio-note>span {font-size:23px;font-weight:900;color:var(--green);}
+.audio-note>small {font-size:10px;color:var(--muted);font-weight:800;white-space:nowrap;}
+.sound-wave {height:43px;display:flex;align-items:center;gap:7px;margin:10px 0;}
+.sound-wave i {height:25px;width:9px;border-radius:6px;background:var(--mint-rim);}
+.sound-wave i:nth-child(3n) {height:40px;background:var(--green);}
+.sound-wave i:nth-child(2n) {height:14px;}
+.rive-character.audio-tea {position:absolute;right:-20px;bottom:0;width:210px;height:340px;z-index:3;}
+.music-note {position:absolute;font-size:61px;font-weight:900;color:var(--purple);}
+.note-one {right:14%;top:4%;transform:rotate(14deg);}
+.note-two {left:4%;top:13%;font-size:43px;color:var(--mint-rim);transform:rotate(-10deg);}
+.meet-tea {border:0;background:none;padding:0;text-align:inherit;cursor:pointer;font:inherit;font-weight:900;}
+.habit-art {height:450px;}
+.habit-halo {position:absolute;inset:60px 15px 30px;background:var(--soft);border-radius:50%;transform:rotate(15deg);}
+.calendar-art {position:relative;width:100%;height:100%;}
+.habit-sticker {bottom:0;left:15%;transform:rotate(5deg);}
+.calendar-flame,.calendar-gem,.day-mark {transform-box:fill-box;transform-origin:center;}
+/* These loops explain progress. Their clocks pause outside the viewport. */
+.animated-scene .device-shell {animation:device-drift 6s ease-in-out infinite;}
+.animated-scene .back-device .device-shell {animation-delay:-3s;}
+.animated-scene .mini-progress i,.animated-scene .mini-row em {animation:mini-progress 7s var(--ease) infinite;}
+.animated-scene .key-answer {animation:answer-press 7s var(--ease) infinite;}
+.animated-scene .sound-wave i {animation:wave .9s ease-in-out infinite alternate;}
+.sound-wave i:nth-child(2n) {animation-delay:-.65s;}
+.sound-wave i:nth-child(3n) {animation-delay:-.3s;}
+.animated-scene .music-note {animation:note-drift 4s ease-in-out infinite;}
+.animated-scene .note-two {animation-delay:-2s;}
+.animated-scene .calendar-flame {animation:flame-nod 4s ease-in-out infinite;}
+.animated-scene .calendar-gem {animation:device-drift 4.5s ease-in-out infinite;}
+.animated-scene .day-mark {animation:day-check 8s var(--ease) infinite;}
+.animated-scene .day-two {animation-delay:.65s;}
+.animated-scene .day-three {animation-delay:1.3s;}
+.animated-scene .day-four {animation-delay:1.95s;}
+.animated-scene .answer-tiles .mint {animation:answer-press 6s var(--ease) infinite;}
+.animated-scene .chest {animation:chest-breathe 5s ease-in-out infinite;}
+.animated-scene:not(.scene-running) * {animation-play-state:paused !important;}
+@keyframes device-drift {0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes mini-progress {0%,15%{transform:scaleX(.35)}40%,90%{transform:scaleX(1)}100%{transform:scaleX(.35)}}
+@keyframes answer-press {0%,25%,45%,100%{transform:translateY(0)}32%,38%{transform:translateY(3px)}}
+@keyframes wave {from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+@keyframes note-drift {0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+@keyframes flame-nod {0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes day-check {0%,8%{opacity:.15;transform:scale(.95)}20%,83%{opacity:1;transform:scale(1)}100%{opacity:.15;transform:scale(.95)}}
+@keyframes chest-breathe {0%,65%,100%{transform:translateY(0) rotate(-7deg)}72%{transform:translateY(-8px) rotate(-10deg)}82%{transform:translateY(0) rotate(-4deg)}}
+@media(max-width:1000px) and (min-width:761px){.device{width:200px}.drawn-screen{height:355px}.mini-greeting{height:90px}.front-device{left:40%}.back-device{left:0}.mini-row{padding:9px 0}.mini-greeting img{height:96px}.phone-scene{height:530px}.audio-note{width:180px;padding:14px}.rive-character.audio-tea{right:-30px;width:175px;height:290px}}
+@media(max-width:760px){
+  .phone-scene{height:530px;width:min(470px,100%);margin:auto;}
+  .device{width:210px;}.front-device{left:43%;top:55px}.back-device{left:5%;top:15px;}
+  .drawn-screen{height:366px}.mini-greeting{height:100px}.mini-greeting img{height:100px}.mini-row{padding:10px 0;}
+  .listening-art{height:420px;width:min(440px,100%);margin:auto;}.listening-section .copy{order:-1;}
+  .rive-character.audio-tea{right:0;width:190px;height:310px}.headphones{width:88%;}
+  .habit-art{height:380px;width:min(470px,100%);margin:auto;}.scene-sticker{font-size:14px;}
+}
+@media(max-width:440px){
+  .phone-scene{height:465px}.device{width:185px}.front-device{left:40%;top:50px}.back-device{left:0;}
+  .device-shell{padding:22px 7px 12px;border-radius:29px;box-shadow:5px 7px 0 var(--mint-rim)}.back-device .device-shell{box-shadow:5px 7px 0 var(--purple)}
+  .drawn-screen{height:323px}.mini-greeting{height:79px}.mini-greeting img{height:85px}.mini-greeting>b{font-size:12px}.mini-brand{font-size:23px}.mini-brand>span{font-size:8px}.mini-row{padding:8px 0;gap:3px;font-size:8px}.mini-row small{font-size:7px}.mini-row i{font-size:11px;width:23px}.mini-subject{font-size:10px}.mini-tabs{font-size:15px}.mini-question{font-size:12px}.mini-formula{font-size:21px;margin-top:18px}.mini-solution{font-size:15px}.mini-keys{padding:10px 15px}.mini-keys>span{font-size:12px;padding:4px}.mini-success{font-size:12px}.device-sticker{left:0;bottom:8px;font-size:12px}.spark-one{width:42px;right:3%}.spark-two{width:40px;bottom:2px;}
+  .listening-art{height:355px}.audio-note{width:175px;padding:12px 15px;top:43%}.audio-note>span{font-size:20px}.audio-note>small{font-size:9px}.sound-wave{gap:6px}.sound-wave i{width:8px}.rive-character.audio-tea{width:155px;height:255px;right:-12px}.music-note{font-size:44px}.note-two{font-size:35px;left:0}.habit-art{height:320px}.habit-sticker{bottom:-8px;font-size:12px;}
+}
+@media(max-width:350px){.device{width:164px}.drawn-screen{height:300px}.front-device{left:39%}.phone-scene{height:420px}.mini-greeting{height:65px}.mini-greeting img{height:73px}.mini-row{padding:7px 0}.mini-brand{font-size:20px}.mini-brand>span{font-size:7px}.mini-greeting>b{font-size:11px}.mini-question{font-size:11px}.mini-formula{font-size:18px}.mini-solution{font-size:14px}.device-sticker{bottom:0}.listening-art{height:320px}.audio-note{width:154px;padding:10px}.audio-note>small{font-size:8px}.rive-character.audio-tea{right:-18px;width:140px;height:235px}}
+@media(prefers-reduced-motion:reduce){.animated-scene *{animation:none !important}.day-mark{opacity:1}.rive-character .character-poster{animation:none !important}}
+
+/* Keep rotated device corners inside the phone viewport. */
+@media(max-width:440px){.phone-scene{transform:scale(.9);transform-origin:50% 0;margin-bottom:-35px}}
+@media(max-width:350px){.phone-scene{transform:scale(.82);margin-bottom:-60px}}

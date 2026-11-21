@@ -1,0 +1,169 @@
+/* Cartoon layer over home.css / scenes.css / phones.css: ink outlines, hard offset shadows, scalloped section
+   edges, drifting doodles. Loaded last. Every animation stops with prefers-reduced-motion. */
+:root {
+  /* Warm palette for the site (the app keeps its own mint): token names stay, values change. */
+  --bg:#fff8ee; --soft:#fff0dc; --line:#f0d9bd; --ink:#2b1d14; --muted:#6e5646;
+  --mint:#ffc45c; --mint-rim:#f0913a; --green:#c2491b; --night:#2a1a13; --purple:#ff8a7a; --gold:#ffd86b;
+  --outline:#3a2516; --wob:cubic-bezier(.34,1.56,.64,1)}
+body {background:var(--bg)}
+.top {background:rgba(255,248,238,.96)}
+.orbit.inner {background:#ffe9cc}
+.btn {color:#3a2516}
+.btn:hover {background:#ffd27f !important}
+.facts {background:var(--soft)}
+
+/* Brand: GoFi, no sparkle */
+.brand {letter-spacing:-.04em; text-shadow:3px 3px 0 var(--mint); transition:transform .3s var(--wob)}
+.brand span {color:var(--mint-rim); text-shadow:3px 3px 0 var(--green)}
+.brand:hover {transform:rotate(-4deg) scale(1.06)}
+.mini-brand>span {display:inline-flex;align-items:center;gap:3px}
+.mini-gem {width:10px;height:12px;display:inline-block}
+
+/* Headings: chunky, with a mint drop */
+h1 {text-shadow:4px 4px 0 var(--mint)}
+h2 {text-shadow:3px 3px 0 #ffdcae}
+.rewards h2 {color:var(--mint); text-shadow:3px 3px 0 #8a3a14}
+.hero-copy h1 em {display:inline-block; animation:toon-wiggle 3.6s ease-in-out infinite; transform-origin:50% 80%}
+.eyebrow {display:inline-block; padding:6px 12px; border:2.5px solid var(--outline); border-radius:999px; background:#fff; box-shadow:0 3px 0 var(--outline); transform:rotate(-2deg)}
+.rewards .eyebrow {background:#1c1c1f; color:var(--mint)}
+
+/* Buttons and cards: ink outline + hard shadow, squishy press */
+.btn {border:3px solid var(--outline); box-shadow:0 6px 0 var(--outline); border-radius:18px; transition:transform .25s var(--wob),box-shadow .15s}
+.btn:hover {transform:translateY(-3px) rotate(-1deg); background:#b4ecd8}
+.btn:active {transform:translateY(5px) scale(.98); box-shadow:0 1px 0 var(--outline)}
+.btn.outline {border-color:var(--outline); box-shadow:0 6px 0 var(--outline)}
+.demo-card,.subject,.faq details,.scene-sticker,.bubble,.mini-win,.tile,.audio-note {border:3px solid var(--outline) !important; box-shadow:0 6px 0 var(--outline) !important}
+.subject {transition:transform .25s var(--wob)}
+.subject:hover {transform:translateY(-3px) rotate(-1.5deg)}
+.subject[aria-pressed="true"] {transform:rotate(1deg)}
+.demo-options button {border:3px solid var(--outline) !important; box-shadow:0 5px 0 var(--outline) !important; transition:transform .25s var(--wob)}
+.demo-options button:hover {transform:translateY(-3px)}
+.gp {box-shadow:inset 0 0 0 .25em #34343c, inset 0 .35em 0 .25em #42424b, 0 0 0 3px var(--outline), 1em 1.2em 0 var(--mint-rim), calc(1em + 3px) calc(1.2em + 3px) 0 var(--outline)}
+
+/* Scene stickers bob, halos breathe like jelly */
+.scene-sticker,.bubble,.mini-win {animation:toon-bob 4.2s ease-in-out infinite}
+.scene-sticker:nth-of-type(2n),.mini-win {animation-delay:-2.1s}
+.scene-halo,.device-halo,.habit-halo,.reward-ring,.orbit.inner {animation:toon-blob 9s ease-in-out infinite}
+.duo-scene .gp,.hero-phone {animation:toon-phone 6s ease-in-out infinite}
+.float.gem svg,.reward-gem {animation:toon-spin 5s ease-in-out infinite}
+
+/* Scalloped section edges */
+.team-section,.rewards,.final {position:relative}
+.team-section::before,.rewards::before,.final::before {content:""; position:absolute; left:0; right:0; top:-25px; height:26px; background-repeat:repeat-x; background-size:52px 26px; pointer-events:none}
+.team-section::before {background-image:radial-gradient(circle at 26px 26px,var(--soft) 25px,transparent 26px)}
+.rewards::before {background-image:radial-gradient(circle at 26px 26px,var(--night) 25px,transparent 26px)}
+.final::before {background-image:radial-gradient(circle at 26px 26px,var(--soft) 25px,transparent 26px)}
+.team-section {border-top:0}
+
+/* Drifting clouds behind the hero */
+.clouds {position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0}
+.cloud {position:absolute; left:0; width:120px; height:40px; border-radius:40px; background:#ffe7c9; animation:toon-drift linear infinite}
+.cloud::before,.cloud::after {content:""; position:absolute; background:inherit; border-radius:50%}
+.cloud::before {width:56px; height:56px; left:18px; top:-26px}
+.cloud::after {width:42px; height:42px; left:62px; top:-18px}
+.hero {position:relative}
+.hero>*:not(.clouds) {position:relative; z-index:1}
+
+/* Peeker: slides out from behind the right edge of the page */
+.faq-section {position:relative}
+.peeker {position:absolute; top:-10px; right:calc((100vw - 100%) / -2); width:190px; height:300px; overflow:hidden; pointer-events:none}
+.peeker .rive-character {position:absolute; inset:0; transform:translateX(100%); transition:transform 1.3s var(--wob); pointer-events:auto}
+.peeker .rive-character.out {transform:translateX(38%)}
+.peeker>img {display:none}
+
+/* Characters added to scenes */
+.habit-art .rive-character.habit-kletka {position:absolute; right:-30px; bottom:-10px; width:170px; height:270px; z-index:4}
+.phone-scene .rive-character.pocket-letopisets {position:absolute; left:-30px; bottom:0; width:170px; height:280px; z-index:4}
+.faq-section .rive-character.faq-sudya {position:absolute; left:-190px; top:10px; width:170px; height:270px}
+.rive-character .character-poster {object-fit:contain; object-position:50% 100%}
+.hero-friend.center {animation:none}
+
+@media(max-width:1180px){.faq-section .rive-character.faq-sudya{position:relative;left:auto;top:auto;display:block;margin:0 auto 10px;width:130px;height:200px}}
+@media(max-width:760px){
+  .faq-section .rive-character.faq-sudya {position:relative; left:auto; top:auto; display:block; margin:0 auto 10px; width:130px; height:200px}
+  .peeker {width:150px; height:240px; top:150px}
+  .habit-art .rive-character.habit-kletka {width:140px; height:220px; right:-10px}
+  .phone-scene .rive-character.pocket-letopisets {width:140px; height:230px; left:-10px}
+}
+
+@keyframes toon-wiggle {0%,100%{transform:rotate(0)}8%{transform:rotate(-4deg) scale(1.05)}16%{transform:rotate(3deg)}24%{transform:rotate(0)}}
+@keyframes toon-bob {0%,100%{translate:0 0}50%{translate:0 -7px}}
+@keyframes toon-blob {0%,100%{border-radius:46% 54% 58% 42% / 52% 44% 56% 48%}33%{border-radius:58% 42% 46% 54% / 44% 58% 42% 56%}66%{border-radius:42% 58% 54% 46% / 58% 46% 54% 42%}}
+@keyframes toon-phone {0%,100%{translate:0 0}50%{translate:0 -10px}}
+@keyframes toon-spin {0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(18deg) scale(1.12)}}
+@keyframes toon-drift {from{transform:translateX(-160px)}to{transform:translateX(calc(100vw + 160px))}}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-copy h1 em,.scene-sticker,.bubble,.mini-win,.scene-halo,.device-halo,.habit-halo,.reward-ring,.orbit.inner,
+  .duo-scene .gp,.hero-phone,.float.gem svg,.reward-gem,.cloud {animation:none !important}
+  .peeker .rive-character {transition:none}
+}
+
+/* FAQ cards: rounded, roomy, squishy */
+.faq details {border-radius:20px; margin-bottom:16px; background:#fff; padding:0 20px; transition:transform .25s var(--wob)}
+.faq details:hover {transform:rotate(-.6deg) translateY(-2px)}
+.faq details[open] {background:#fff3e2}
+.faq summary {padding:18px 40px 18px 0}
+.faq summary:after {top:11px}
+
+/* Drawn phones take the warm accent too (schematic, not a copy of the app) */
+.gp {--mintA:#ffb84d; --gemA:#ff9a6b}
+.gp-keys .go,.gp-cta {box-shadow:0 .35em 0 #b85f17}
+.gp-verdict {position:absolute; left:1.2em; right:1.2em; bottom:20.5em; padding:.7em 1em; border-radius:1.2em; background:#ffb84d; color:#2a1a13; font-size:1.2em; text-align:center; opacity:0; transform:translateY(1em) scale(.8); transition:opacity .2s,transform .45s var(--wob)}
+.gp-verdict.on {opacity:1; transform:none}
+
+/* Hero: Gofi carves down a snowy slope on a phone */
+.ride-scene {height:520px}
+.slope {position:absolute; left:-6%; right:-6%; width:112%; bottom:0; height:46%; z-index:0}
+.speed {position:absolute; height:6px; border-radius:6px; background:var(--outline); opacity:.18; z-index:1; animation:ride-speed 1.1s linear infinite}
+.speed.s1 {width:90px; top:38%; right:4%}
+.speed.s2 {width:60px; top:48%; right:12%; animation-delay:-.4s}
+.speed.s3 {width:110px; top:58%; right:0; animation-delay:-.75s}
+.rider {position:absolute; left:14%; bottom:22%; width:330px; height:420px; z-index:3; animation:ride-carve 3s ease-in-out infinite; transform-origin:50% 90%}
+.rider .rive-character {position:absolute; left:70px; bottom:50px; width:200px; height:330px; z-index:2}
+.board-phone {position:absolute; left:6px; bottom:12px; width:318px; height:70px; padding:7px; border-radius:26px; background:#2a1a13; border:4px solid var(--outline); box-shadow:0 10px 0 var(--outline); transform:perspective(500px) rotateX(38deg) rotate(-4deg); z-index:1}
+.bp-screen {position:relative; height:100%; border-radius:18px; background:#fff3e2; overflow:hidden; display:flex; align-items:center; gap:7px; padding:0 14px 0 26px}
+.bp-cam {position:absolute; left:8px; top:50%; width:8px; height:22px; margin-top:-11px; border-radius:6px; background:#2a1a13}
+.bp-screen>span {display:flex; gap:4px; align-items:center}
+.bp-top {flex-direction:column} .bp-top b {width:12px; height:5px; border-radius:3px; background:#f0913a}
+.bp-hero {width:64px; height:42px; border-radius:10px; background:#ffc45c; flex-direction:column; justify-content:center; padding:4px}
+.bp-hero em {width:16px; height:16px; border-radius:50%; background:#c2491b}
+.bp-hero i {width:40px; height:4px; border-radius:3px; background:#fff8ee}
+.bp-row {flex-direction:column; gap:5px} .bp-row u {width:12px; height:12px; border-radius:4px; background:#ff8a7a} .bp-row i {width:34px; height:5px; border-radius:3px; background:#f0d9bd}
+.bp-tabs {flex-direction:column; margin-left:auto} .bp-tabs b {width:10px; height:10px; border-radius:50%; background:#f0d9bd} .bp-tabs b:first-child {background:#c2491b}
+.spray {position:absolute; left:-30px; bottom:16px; width:120px; height:60px; z-index:0}
+.puff {position:absolute; right:0; bottom:10px; width:26px; height:26px; border-radius:50%; background:#fff; border:3px solid var(--outline); opacity:0; animation:ride-puff 2.8s ease-out infinite; animation-delay:var(--d)}
+.ride-scene .bubble {top:6%; left:52%; right:auto; z-index:5}
+@keyframes ride-carve {0%,100%{transform:translate(-14px,6px) rotate(-5deg)}25%{transform:translate(0,-14px) rotate(0)}50%{transform:translate(14px,6px) rotate(5deg)}75%{transform:translate(0,-14px) rotate(0)}}
+@keyframes ride-speed {from{translate:60px 0; opacity:0}30%{opacity:.25}to{translate:-220px 0; opacity:0}}
+@keyframes ride-puff {0%{opacity:.95; transform:translate(0,var(--y)) scale(calc(var(--s)*.4))}100%{opacity:0; transform:translate(-110px,calc(var(--y) - 30px)) scale(calc(var(--s)*1.3))}}
+
+/* Bait solves on a big phone: his finger lands on the keyboard */
+.press-scene {position:relative; height:540px; width:440px; max-width:100%; margin:auto}
+.press-scene .scene-halo {position:absolute; inset:40px 0 20px; border-radius:46% 54% 58% 42%; background:var(--soft)}
+/* Keys «1», «6» and «Проверить» sit under Bait's fingertip contacts (rig.py POKES): measured at scene
+   (186,378), (178,410), (161,437) for a 210×340 Bait at the bottom-left of a 540 px scene; characters.js sends
+   the contact moments. */
+.press-phone {--w:230px; left:147px; top:21px; transform:rotate(4deg)}   /* fitted in the browser: each contact ≥5 px inside its key */
+.gp-keys>span {position:relative}
+.gp-keys>span::after {content:""; position:absolute; inset:-.2em; border-radius:1em; border:.3em solid #ffb84d; opacity:0; transform:scale(1.5); transition:opacity .5s ease-out,transform .5s ease-out; pointer-events:none}
+.gp-keys>span.press::after {opacity:1; transform:scale(.9); transition:none}
+.split>* {min-width:0}
+@media(max-width:760px){.split{grid-template-columns:minmax(0,1fr)}}
+.press-scene .rive-character {position:absolute; left:0; bottom:0; width:210px; height:340px; z-index:4}
+@media(max-width:1000px){.ride-scene{height:470px}.rider{left:6%;scale:.88}}
+@media(max-width:760px){.ride-scene{height:400px;width:min(430px,100%);margin:auto}.rider{left:50%;margin-left:-165px;scale:.8;bottom:16%}.ride-scene .bubble{left:auto;right:0;top:0}}
+@media(max-width:470px){.press-scene{width:440px;transform:scale(.8);transform-origin:50% 0;margin:0 auto -60px;left:50%;translate:-50% 0;position:relative}}
+@media(max-width:380px){.rider{scale:.72}}
+@media(prefers-reduced-motion:reduce){.rider,.speed,.puff{animation:none !important}.puff{opacity:0}}
+
+/* Teacher picker: every teacher stands in the same slot; only the picked one is visible */
+.teacher-slots {position:relative; width:240px; height:360px; margin:auto}
+.teacher-slots>.rive-character {position:absolute; inset:0; width:auto; height:auto; margin:0; visibility:hidden}
+.teacher-slots>.rive-character.picked {visibility:visible}
+.teacher-slots>img {display:none}
+@media(max-width:760px){.teacher-slots{width:210px;height:300px}}
+.teacher-halo {background:#ffe2bd !important}
+.teacher-slots {margin-bottom:14px}
+
+.footer-grid .legal {flex-basis:100%; margin:6px 0 0; font-size:12px; line-height:1.5; color:var(--muted)}

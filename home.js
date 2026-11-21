@@ -22,7 +22,7 @@
   subjects.forEach(button => button.addEventListener('click', () => {
     subjects.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
     if (teacherImage) {
-      teacherImage.src = `img/${button.dataset.teacher}.png?v=20261116-rive`;
+      teacherImage.src = `img/${button.dataset.teacher}.png?v=20261117-scenes`;
       teacherImage.alt = button.dataset.name;
     }
     document.querySelector('#teacher-name').textContent = button.dataset.name;
