@@ -1,10 +1,29 @@
-/* «Раскраска мимо контура» (2026-11-26): неровная линия от руки на месте, а заливка чуть дрожит и съезжает
-   за неё, будто раскрашивал ребёнок. Только украшения: кнопки, текст, телефоны и герои остаются ровными.
-   Фильтры #scribble (мелкое) и #scribble-lg (крупные пятна) — в <defs> index.html. Рисунки неподвижны. */
-.scene-halo,.teacher-halo,.habit-halo,.device-halo {filter:url(#scribble-lg)}
-/* Заливка ярче фона, чтобы съехавший цвет был виден. */
-.scene-halo,.teacher-halo,.habit-halo,.device-halo {background:#ffd394 !important}
-/* Облака плывут под текстом — линия мягкая, чтобы не мешать читать. */
-.cloud {filter:url(#scribble-soft)}
-.device-spark,.calendar-art {filter:url(#scribble)}
-@media (prefers-reduced-transparency:reduce) {.scene-halo,.teacher-halo,.habit-halo,.device-halo,.cloud,.device-spark,.calendar-art {filter:none}}
+/* Стиль «линия + мятное акварельное пятно» (2026-11-26): толстая ровная линия, одно мятное пятно с текстурой
+   акварели, залитое неаккуратно и выходящее за контур, каракули вокруг. Рисунки — tools/site/ink.py → img/ink/.
+   Живые герои и кнопки не меняются. Фильтр #wc-site — в <defs> index.html. */
+:root {
+  --bg:#ffffff; --soft:#f1fbf7; --line:#d5ede4; --ink:#1f2a33; --muted:#566570;
+  --mint:#6fdcb9; --mint-rim:#2fae8a; --green:#12795e; --outline:#1f2a33; --gold:#ffd86b}
+body {background:var(--bg)}
+.top {background:rgba(255,255,255,.96)}
+.facts {background:var(--soft)}
+h2 {text-shadow:3px 3px 0 #c9f1e3}
+.rewards h2 {text-shadow:3px 3px 0 #0b4a3a}
+.btn:hover {background:#9be8cf !important}
+.orbit.inner {background:#dcf6ec}
+.cloud {background:#e2f6ee}
+
+/* За героями вместо ровных кругов — мятное акварельное пятно. */
+.scene-halo,.teacher-halo,.habit-halo,.device-halo {background:#6fdcb9 !important; opacity:.85; filter:url(#wc-site)}
+
+/* Рисунок над заголовком блока. */
+.ink {display:block; width:150px; height:150px; margin:0 0 4px -12px}
+.faq-section .ink,.final .ink {margin:0 auto 4px}
+@media (max-width:700px) {.ink {width:120px; height:120px}}
+
+/* Блок наград — светлый, как остальные (раньше тёмный). */
+.rewards {background:var(--soft); color:var(--ink)}
+.rewards h2 {color:var(--green); text-shadow:3px 3px 0 #c9f1e3}
+.rewards p {color:var(--muted)}
+.rewards .eyebrow {background:#fff; color:var(--green)}
+.rewards::before {background-image:radial-gradient(circle at 26px 26px,var(--soft) 25px,transparent 26px)}
