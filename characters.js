@@ -5,7 +5,7 @@
   const instances = new Set();
   const byElement = new WeakMap();
   let runtimePromise;
-  const manifestPromise = fetch('characters.json?v=20261118-emotions')
+  const manifestPromise = fetch('characters.json?v=12008dd653fe')
     .then(response => {if (!response.ok) throw Error('Character manifest'); return response.json();});
   // A failed optional enhancement must never hide the static page.
   manifestPromise.catch(() => {});
