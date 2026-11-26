@@ -9,4 +9,5 @@
 <rect x="48" y="196" width="204" height="44" rx="8"/><path d="M60 210h150M60 226h150M222 196v44"/>
 <g transform="rotate(-5 150 175)"><rect x="66" y="156" width="170" height="40" rx="8"/><path d="M80 176h120M90 156v40"/></g>
 <g transform="rotate(4 150 135)"><rect x="58" y="118" width="184" height="38" rx="8"/><path d="M220 118v38M72 131h130M72 143h130"/></g>
-<path d="M150 112c-18-2-30-22-22-40 6-14 18-12 22-8 4-4 16-6 22 8 8 18-4 38-22 40z"/><path d="M150 64c0-10 4-16 12-20"/></g><g fill="none" stroke="#1f2a33" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M268 44v16M260 52h16"/><path d="M26 273l7-7 7 7 7-7 7 7"/><path d="M262 258l5 10 11 1-8 7 3 11-11-6-10 6 3-11-8-7 11-1z"/><path d="M271 171l22-22"/></g></svg>
+<path d="M150 112c-18-2-30-22-22-40 6-14 18-12 22-8 4-4 16-6 22 8 8 18-4 38-22 40z"/><path d="M150 64c0-10 4-16 12-20"/><path d="M162 46q12-6 18 4-10 6-18-4z"/>
+<path d="M232 240v22l8-7 8 7v-22"/><path d="M136 86q-4 8 0 16"/></g><g fill="none" stroke="#1f2a33" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M268 44v16M260 52h16"/><path d="M26 273l7-7 7 7 7-7 7 7"/><path d="M262 258l5 10 11 1-8 7 3 11-11-6-10 6 3-11-8-7 11-1z"/><path d="M271 171l22-22"/></g></svg>

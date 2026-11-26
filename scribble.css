@@ -27,3 +27,23 @@ h2 {text-shadow:3px 3px 0 #c9f1e3}
 .rewards p {color:var(--muted)}
 .rewards .eyebrow {background:#fff; color:var(--green)}
 .rewards::before {background-image:radial-gradient(circle at 26px 26px,var(--soft) 25px,transparent 26px)}
+
+/* Значки в полосе фактов. */
+.fact-ink {width:56px; height:56px; vertical-align:middle; margin-right:10px}
+@media (max-width:700px) {.fact-ink {width:40px; height:40px; margin-right:6px}}
+
+/* Россыпь каракулей по краям блоков, как на полях тетради. */
+section {position:relative; isolation:isolate}
+body {overflow-x:clip}
+.confetti,.hero>.confetti {position:absolute; top:0; left:calc(50% - 50vw) !important; right:auto; transform:none !important; width:100vw !important; height:100% !important; max-width:none; margin:0; padding:0; pointer-events:none; z-index:-1; overflow:hidden; opacity:1 !important; animation:none !important; visibility:visible !important; background:none !important; border:0 !important; box-shadow:none !important; border-radius:0 !important; filter:none !important}
+.dd {position:absolute; fill:none; stroke:var(--ink); stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; opacity:.75}
+.dd.mint {stroke:var(--mint-rim); opacity:.9}
+@media (max-width:900px) {.confetti,.hero>.confetti {display:none !important}}
+
+/* Первый экран и команда: дополнительные рисунки. */
+.hero-copy {position:relative}
+.hero-rocket {position:absolute; right:10px; top:-60px; width:130px; height:130px; transform:rotate(12deg)}
+.section-heading {position:relative}
+.team-globe {position:absolute; left:-20px; top:-30px; width:130px; height:130px; transform:rotate(-8deg)}
+.team-calc {position:absolute; right:-10px; top:10px; width:120px; height:120px; transform:rotate(9deg)}
+@media (max-width:900px) {.hero-rocket {width:80px; height:80px; top:-40px; right:0} .team-globe,.team-calc {display:none}}

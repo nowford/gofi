@@ -8,4 +8,5 @@
 </filter></defs><path d="M132 150 L60 240 Q62 262 96 262 L226 258 Q246 250 232 226 L180 150 Z" fill="#3fd0a4" filter="url(#wc)"/><g fill="none" stroke="#1f2a33" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
 <path d="M128 56v66L70 230q-8 20 14 22h132q22-2 14-22l-58-108V56"/><path d="M114 56h72"/>
 <path d="M96 186q14-10 28 0t28 0 28 0 28 0"/>
-<circle cx="140" cy="216" r="7"/><circle cx="170" cy="230" r="5"/><circle cx="158" cy="100" r="6"/><circle cx="146" cy="76" r="4"/></g><g fill="none" stroke="#1f2a33" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M40 262v16M32 270h16"/><path d="M34 32l5 10 11 1-8 7 3 11-11-6-10 6 3-11-8-7 11-1z"/><circle cx="282" cy="160" r="6"/><path d="M254 55l7-7 7 7 7-7 7 7"/></g></svg>
+<circle cx="140" cy="216" r="7"/><circle cx="170" cy="230" r="5"/><circle cx="158" cy="100" r="6"/><circle cx="146" cy="76" r="4"/>
+<path d="M190 160l10 18M86 234l6-10"/><path d="M128 40q6-10 0-20M150 34q8-10 2-22M172 40q6-8 2-16"/></g><g fill="none" stroke="#1f2a33" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M40 262v16M32 270h16"/><path d="M34 32l5 10 11 1-8 7 3 11-11-6-10 6 3-11-8-7 11-1z"/><circle cx="282" cy="160" r="6"/><path d="M254 55l7-7 7 7 7-7 7 7"/></g></svg>
