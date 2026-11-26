@@ -9,11 +9,41 @@
 <meta property="og:image" content="https://nowford.github.io/gofi/icon.png">
 <meta name="theme-color" content="#FFF8EE">
 <link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="icon.png">
-<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="home.css?v=20261117-scenes"><link rel="stylesheet" href="scenes.css?v=20261118-warm"><link rel="stylesheet" href="phones.css?v=20261118-warm"><link rel="stylesheet" href="toon.css?v=20261118-fit">
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="home.css?v=20261117-scenes"><link rel="stylesheet" href="scenes.css?v=20261118-warm"><link rel="stylesheet" href="phones.css?v=20261118-warm"><link rel="stylesheet" href="toon.css?v=20261118-fit"><link rel="stylesheet" href="scribble.css?v=20261126">
 </head><body>
 <a class="skip" href="#main">К содержимому</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <filter id="scribble" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G" result="w"/>
+      <feOffset in="w" dx="3" dy="3" result="fill"/>
+      <feMorphology in="SourceAlpha" operator="dilate" radius="1.6" result="fat"/>
+      <feComposite in="fat" in2="SourceAlpha" operator="out" result="ring"/>
+      <feDisplacementMap in="ring" in2="n" scale="3" xChannelSelector="G" yChannelSelector="R" result="rw"/>
+      <feFlood flood-color="#3a2516"/><feComposite in2="rw" operator="in" result="line"/>
+      <feMerge><feMergeNode in="fill"/><feMergeNode in="line"/></feMerge>
+    </filter>
+    <filter id="scribble-lg" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="18" xChannelSelector="R" yChannelSelector="G" result="w"/>
+      <feOffset in="w" dx="16" dy="11" result="fill"/>
+      <feMorphology in="SourceAlpha" operator="dilate" radius="2.5" result="fat"/>
+      <feComposite in="fat" in2="SourceAlpha" operator="out" result="ring"/>
+      <feDisplacementMap in="ring" in2="n" scale="8" xChannelSelector="G" yChannelSelector="R" result="rw"/>
+      <feFlood flood-color="#3a2516"/><feComposite in2="rw" operator="in" result="line"/>
+      <feMerge><feMergeNode in="fill"/><feMergeNode in="line"/></feMerge>
+    </filter>
+    <filter id="scribble-soft" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="14" xChannelSelector="R" yChannelSelector="G" result="w"/>
+      <feOffset in="w" dx="9" dy="7" result="fill"/>
+      <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="fat"/>
+      <feComposite in="fat" in2="SourceAlpha" operator="out" result="ring"/>
+      <feDisplacementMap in="ring" in2="n" scale="8" xChannelSelector="G" yChannelSelector="R" result="rw"/>
+      <feFlood flood-color="#e9b98a"/><feComposite in2="rw" operator="in" result="line"/>
+      <feMerge><feMergeNode in="fill"/><feMergeNode in="line"/></feMerge>
+    </filter>
     <symbol id="gem" viewBox="0 0 64 64"><path d="M32 4 52 22 44 56H20L12 22Z" fill="#4FC9F0"/><path d="M32 4 52 22 44 56 32 50Z" fill="#2B9CC4"/><path d="M32 4 24 24 32 50 40 24Z" fill="#8FE3FB"/><path d="M12 22H52L40 24H24Z" fill="#C9F3FF"/></symbol>
     <symbol id="flame" viewBox="0 0 64 64"><path d="M32 4C40 16 52 22 52 38a20 20 0 0 1-40 0c0-8 4-14 8-18 0 6 2 10 6 12C26 22 28 12 32 4Z" fill="#FF9B2F"/><path d="M32 4c8 12 20 18 20 34a20 20 0 0 1-20 20Z" fill="#F07A1A"/><path d="M32 28c6 6 10 10 10 16a10 10 0 0 1-20 0c0-6 4-10 10-16Z" fill="#FFD25A"/></symbol>
     <symbol id="star" viewBox="0 0 64 64"><path d="M32 4l8 18 20 2-15 13 5 20-18-11-18 11 5-20L4 24l20-2Z" fill="#FFC93C"/><path d="M32 4l8 18 20 2-15 13 5 20-18-11Z" fill="#F0A800"/></symbol>

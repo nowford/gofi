@@ -1,0 +1,10 @@
+/* «Раскраска мимо контура» (2026-11-26): неровная линия от руки на месте, а заливка чуть дрожит и съезжает
+   за неё, будто раскрашивал ребёнок. Только украшения: кнопки, текст, телефоны и герои остаются ровными.
+   Фильтры #scribble (мелкое) и #scribble-lg (крупные пятна) — в <defs> index.html. Рисунки неподвижны. */
+.scene-halo,.teacher-halo,.habit-halo,.device-halo {filter:url(#scribble-lg)}
+/* Заливка ярче фона, чтобы съехавший цвет был виден. */
+.scene-halo,.teacher-halo,.habit-halo,.device-halo {background:#ffd394 !important}
+/* Облака плывут под текстом — линия мягкая, чтобы не мешать читать. */
+.cloud {filter:url(#scribble-soft)}
+.device-spark,.calendar-art {filter:url(#scribble)}
+@media (prefers-reduced-transparency:reduce) {.scene-halo,.teacher-halo,.habit-halo,.device-halo,.cloud,.device-spark,.calendar-art {filter:none}}
